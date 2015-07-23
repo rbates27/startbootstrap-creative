@@ -24,6 +24,9 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/creative.css" type="text/css">
+    
+    <!-- threesixty.css -->
+    <link rel="stylesheet" href="css/threesixty.css" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,30 +41,93 @@
     <section id="products">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Our selection</h2>
-                    <hr class="primary">
+                <div class="col-xs-12 text-center">
+                    <h1 class="section-heading">Products</h1>
                 </div>
             </div>
         </div>
+        <hr>
         <div class="container">
+            
+            <!-- *************************** -->
+            <!--           SolidSnap         -->
+            <!-- *************************** -->
             <div class="row">
-                <div class="col-lg-6 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                        <h3>Product A</h3>
-                        <p class="text-muted">Dowload this to perform X task.</p>
+                <div class="col-xs-12 text-center">
+                    <h2>SolidSnap - COMING SOON!</h2>
+                    <!--<i class="fa fa-5x fa-play wow bounceIn" data-wow-delay=".2s"></i>-->
+                </div>
+            </div>
+            <div class="row">
+                <!-- THREESIXTY -->
+                <div class="col-xs-6">
+                    <div class="threesixty product1">
+                        <div class="infoi">
+                            <!--<img src="http://www.whitehalldigital.com/360/360content/overlay3D.png" height="64" width="64"/>-->
+                            <img src="img/overlay3D.png" height="64" width="64"/>
+                        </div>
+                        <div class="spinner">
+                            <span>0%</span>
+                        </div>
+                        <ol class="threesixty_images"></ol>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Product B</h3>
-                        <p class="text-muted">Doaload this to perform Y task.</p>
+                <div class="col-xs-6">
+                    <p class="text-muted">SolidSnap is a simple SolidWorks plug-in that allows you to quickly and easily generate dynamic turntable-style animations of your designs.  The output is basic html and a series of images.  It doesn't require any special viewers or downloads.</p>
+                    <p class="text-muted">Simply click (or touch) and then drag to spin the image.</p>
+                    <p class="text-muted">Try or buy now!</p>
+                </div>
+            </div>
+            <hr>
+            
+            <!-- *************************** -->
+            <!--           PV360X            -->
+            <!-- *************************** -->
+            <div class="row text-center">
+                <div class="col-xs-12 text-center">
+                    <h2>PV360X - COMING SOON!</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <img class="img-responsive" src="./img/Materials%20Web%205.png" />
+                </div>
+                <div class="col-xs-6">
+                    <!--<i class="fa fa-5x fa-camera-retro wow bounceIn" style="color:#f05f40" data-wow-delay=".2s"></i>-->
+                    <p class="text-muted">PV360X is a SolidWorks PhotoView 360 add-in that is still under development.</p>
+                    <p class="text-muted">Find out more and stay up to date at the dedicated <a href="http://www.pv360x.com">PV360X Website</a></p>
+                </div>
+            </div>
+            <hr>
+            
+            <!-- *************************** -->
+            <!--           HDRLS            -->
+            <!-- *************************** -->
+            <div class="row text-center">
+                <div class="col-xs-12 text-center">
+                    <h2>SOLIDWORKS HDR Light Studio - COMING SOON!</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <img class="img-responsive" src="./img/SWHDRLS.jpg" />
+                </div>
+                <div class="col-xs-6">
+                    <p class="text-muted">We’ve been working with the gang at Lightmap LTD, creators of the award winning <a href="http://www.hdrlightstudio.com">HDR Light Studio</a> product, to bring an integration of HDR Light Studio directly to SOLIDWORKS and PhotoView 360.</p>
+                    <p class="text-muted">It’s still a bit early, but we’re very excited to be bringing this to you very soon.</p>
+                    <p class="text-muted">If you’d like to stay up to date on our progress and want to be considered for early access to do some Beta testing for us, please email us at: <a href="mailto:hdrlightstudio@whitehalldigital.com">hdrlightstudio@whitehalldigital.com</a></p>
+                    <p class="text-muted">Below is a brief video showing HDRLS in action SOLIDWORKS 2015.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <div align="center" class="embed-responsive embed-responsive-16by9">
+                    <video controls class="embed-responsive-item">
+                        <source src=./img/SWW_HDRLS_Demo.mp4 type=video/mp4>
+                    </video>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -76,6 +142,39 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
+    
+    <!-- Threesixty JavaScript -->
+    <script src="js/threesixty.js"></script>
+    
+    
+    <script type="text/javascript">
+    window.onload = init;
+
+    function init() {
+
+        product1 = $('.product1').ThreeSixty({
+            totalFrames: 24,
+            endFrame: 24,
+            currentFrame: 1,
+            drag: true,
+            imgList: '.threesixty_images',
+            progress: '.spinner',
+            imagePath: 'img/img_engine/',
+            filePrefix: '',
+            ext: '.jpg',
+            height: 350,
+            width: 350,
+            navigation: false,
+            disableSpin: false,
+            speedMultiplier: 1,
+            zeroPadding: true,
+            responsive: true,
+            onReady: function () {
+                //
+            }
+        });
+    }
+</script>
 
 </body>
 
